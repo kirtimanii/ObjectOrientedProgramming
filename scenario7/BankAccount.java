@@ -19,6 +19,7 @@ public class BankAccount
         holderName = name;
         balance = initialBalance;
     }
+    
     void deposit(double amount) 
     {
         if (amount > 0) 
@@ -26,6 +27,7 @@ public class BankAccount
             balance = balance + amount;
         }
     }
+    
     void withdraw(double amount) 
     {
         if (amount > 0 && amount <= balance) 
@@ -33,6 +35,7 @@ public class BankAccount
             balance = balance - amount;
         }
     }
+    
     void displayBalance() 
     {
         System.out.println("Account Number : " + accountNumber);
