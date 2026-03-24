@@ -85,6 +85,19 @@ public class StudentForm extends JFrame implements ActionListener
                 int counter = txtField.getText().length();
                 
                 countLabel.setText("Character Count: "+ counter);
+                
+                if(counter < 5 )
+                {
+                    countLabel.setForeground(Color.GREEN);
+                }
+                else if (counter < 10 )
+                {
+                    countLabel.setForeground(Color.BLUE);
+                }
+                else if (counter < 15)
+                {
+                    countLabel.setForeground(Color.RED);
+                }
             }
         });
 
