@@ -82,22 +82,26 @@ public class StudentForm extends JFrame implements ActionListener
             @Override
             public void keyReleased(KeyEvent e)
             {
-                int counter = txtField.getText().length();
+                if(e.getKeyCode()==KeyEvent.VK_ENTER)
+                {
+                    int counter = txtField.getText().length();
                 
-                countLabel.setText("Character Count: "+ counter);
+                    countLabel.setText("Character Count: "+ counter);
                 
-                if(counter < 5 )
-                {
-                    countLabel.setForeground(Color.GREEN);
+                    if(counter < 5 )
+                    {
+                        countLabel.setForeground(Color.GREEN);
+                    }
+                    else if (counter < 10 )
+                    {
+                        countLabel.setForeground(Color.BLUE);
+                    }
+                    else if (counter < 15)
+                    {
+                        countLabel.setForeground(Color.RED);
+                    }
                 }
-                else if (counter < 10 )
-                {
-                    countLabel.setForeground(Color.BLUE);
-                }
-                else if (counter < 15)
-                {
-                    countLabel.setForeground(Color.RED);
-                }
+    
             }
         });
 
