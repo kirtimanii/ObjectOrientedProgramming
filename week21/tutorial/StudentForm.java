@@ -77,6 +77,27 @@ public class StudentForm extends JFrame implements ActionListener
         txtField = new JTextField(15);
         txtField.setText("Enter your name");
         
+        txtField.addFocusListener( new FocusAdapter()
+        {
+          @Override
+          public void focusGained(FocusEvent e)
+          {
+              if(txtField.getText().equalsIgnoreCase("Enter your name"))
+              {
+                  txtField.setText("");
+              }
+          }
+          
+          @Override
+          public void focusLost(FocusEvent e)
+          {
+              if(txtField.getText().equalsIgnoreCase(""))
+              {
+                  txtField.setText("Enter your name");
+              }
+          }
+        });
+        
         txtField.addKeyListener(new KeyAdapter()
         {
             @Override
@@ -96,12 +117,11 @@ public class StudentForm extends JFrame implements ActionListener
                     {
                         countLabel.setForeground(Color.BLUE);
                     }
-                    else if (counter < 15)
+                    else
                     {
                         countLabel.setForeground(Color.RED);
                     }
                 }
-    
             }
         });
 
